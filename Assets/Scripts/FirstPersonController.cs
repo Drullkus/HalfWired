@@ -10,11 +10,14 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private float mouseSensitivity = 0.1f;
     [SerializeField] private float maxPitch = 85f;
     [SerializeField] private bool lockCursor = true;
-    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float moveSpeed = 10f;
+    [SerializeField] private float jumpHeight = 2.5f;
+    [SerializeField] private float gravity = -20f;
 
     private CharacterController controller;
     private InputAction moveAction;
     private InputAction lookAction;
+    private InputAction jumpAction;
 
     private Vector3 velocity;
     private float pitch;
@@ -33,6 +36,7 @@ public class FirstPersonController : MonoBehaviour
 
         moveAction   = asset.FindAction("Player/Move", throwIfNotFound: true);
         lookAction   = asset.FindAction("Player/Look", throwIfNotFound: true);
+        jumpAction   = asset.FindAction("Player/Jump",   throwIfNotFound: true);
     }
 
     private static void CaptureCursor()
@@ -97,8 +101,23 @@ public class FirstPersonController : MonoBehaviour
         Vector2 input = moveAction.ReadValue<Vector2>();
         Vector3 horizontalMove = transform.right * input.x + transform.forward * input.y;
         horizontalMove.Normalize();
+        horizontalMove *= moveSpeed;
 
-        controller.Move(horizontalMove * Time.deltaTime * moveSpeed);
+        bool grounded = controller.isGrounded;
+        if (grounded && velocity.y < 0f)
+        {
+            velocity.y = -2f;
+        }
+        
+        if (grounded && jumpAction.WasPressedThisFrame())
+        {
+            velocity.y = Mathf.Sqrt(-2f * gravity * jumpHeight); // Initial velocity formula: https://math.stackexchange.com/a/222585
+        }
+
+        velocity.y += gravity * Time.deltaTime;
+
+        Vector3 motion = (horizontalMove + Vector3.up * velocity.y) * Time.deltaTime;
+        controller.Move(motion);
     }
 
 }

@@ -8,10 +8,13 @@ public class TowerController : MonoBehaviour
 {
     
     [SerializeField] private GameObject roomPrefab;
+    [SerializeField] private Transform towerTop;
+    [SerializeField] private Transform towerBottom;
     
     private readonly Dictionary<Int64, GameObject> _rooms = new();
     private readonly HashSet<RoomController> _playerOverlapping = new();
     private int salt;
+    private int roomHeight = 12;
 
     public void Start()
     {
@@ -49,6 +52,8 @@ public class TowerController : MonoBehaviour
         
         DestroyFarRooms(playerRoom);
         InitializeMissingRooms(playerRoom);
+        towerBottom.position = new Vector3(0, (playerRoom - 3) * roomHeight, 0);
+        towerTop.position = new Vector3(0, (playerRoom + 3) * roomHeight, 0);
     }
 
     private void DestroyFarRooms(long playerRoom)

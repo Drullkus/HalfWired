@@ -7,20 +7,31 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private InputActionAsset inputActions;
 
     [SerializeField] private Transform cameraPivot;
+    [SerializeField] private Camera camera;
+    
     [SerializeField] private float mouseSensitivity = 0.1f;
     [SerializeField] private float maxPitch = 85f;
     [SerializeField] private bool lockCursor = true;
     [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private float jumpHeight = 2.5f;
     [SerializeField] private float gravity = -20f;
+    
+    [SerializeField] private float laserRange = 60f;
+    [SerializeField] private LayerMask laserLayerHits;
+
+    [SerializeField] private GameObject missile;
+    [SerializeField] private float missileOffset = 1f;
 
     private CharacterController controller;
     private InputAction moveAction;
     private InputAction lookAction;
     private InputAction jumpAction;
+    private InputAction attackAction;
 
     private Vector3 velocity;
     private float pitch;
+    
+    private Vector3 laserPoint;
 
     private void Awake()
     {
@@ -37,6 +48,7 @@ public class FirstPersonController : MonoBehaviour
         moveAction = asset.FindAction("Player/Move", throwIfNotFound: true);
         lookAction = asset.FindAction("Player/Look", throwIfNotFound: true);
         jumpAction = asset.FindAction("Player/Jump", throwIfNotFound: true);
+        attackAction = asset.FindAction("Player/Attack", throwIfNotFound: true);
     }
 
     private static void CaptureCursor()
@@ -66,6 +78,8 @@ public class FirstPersonController : MonoBehaviour
         HandleCursorToggle();
         HandleLook();
         HandleMove();
+        HandleLaser();
+        HandleClick();
     }
 
     private void HandleCursorToggle()
@@ -118,6 +132,26 @@ public class FirstPersonController : MonoBehaviour
 
         Vector3 motion = (horizontalMove + Vector3.up * velocity.y) * Time.deltaTime;
         controller.Move(motion);
+    }
+
+    private void HandleLaser()
+    {
+        var ray = camera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
+        laserPoint = Physics.Raycast(ray, out RaycastHit hit, laserRange, laserLayerHits.value, QueryTriggerInteraction.Ignore) ? hit.point : ray.GetPoint(laserRange);
+    }
+
+    public Vector3 GetLaserPoint()
+    {
+        return laserPoint;
+    }
+
+    private void HandleClick()
+    {
+        if (missile.activeInHierarchy || !attackAction.WasPressedThisFrame()) return;
+        
+        missile.SetActive(true);
+        missile.transform.position = transform.position + transform.forward * missileOffset;
+        missile.transform.rotation = transform.rotation;
     }
 
 }

@@ -167,6 +167,7 @@ public class FirstPersonController : MonoBehaviour
         Debug.Log($"Game over, resetting {transform.name}");
 
         FindAnyObjectByType<TowerController>().RebuildTower(0);
+        FindAnyObjectByType<HudController>().Reset();
         Teleport(new Vector3(0, 6, 0));
     }
 

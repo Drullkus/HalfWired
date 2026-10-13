@@ -56,10 +56,14 @@ public class MissileController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (!_firstPersonController.CanHit(collision.gameObject)) return;
+
+        if (gameObject.activeInHierarchy && collision.gameObject.CompareTag("Enemy"))
+        {
+            FindAnyObjectByType<HudController>().AddHit();
+            // TODO boom
+        }
         
         gameObject.SetActive(false);
-        
-        // TODO boom
     }
     
 }

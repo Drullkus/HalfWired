@@ -241,13 +241,13 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ac56ebefb4b4ceebebfd66edae0c8bb, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::FirstPersonController
   inputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   cameraPivot: {fileID: 824401827015430127}
   mouseSensitivity: 0.1
   maxPitch: 85
   lockCursor: 1
-  moveSpeed: 5
+  moveSpeed: 10
   jumpHeight: 2.5
   gravity: -20
 --- !u!143 &4614830038613154770

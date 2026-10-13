@@ -154,4 +154,9 @@ public class FirstPersonController : MonoBehaviour
         missile.transform.rotation = transform.rotation;
     }
 
+    public bool CanHit(GameObject collided)
+    {
+        return (laserLayerHits.value & (1 << collided.layer)) != 0;
+    }
+
 }

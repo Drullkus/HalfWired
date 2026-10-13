@@ -27,8 +27,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3545846425660132737}
   - {fileID: 5714317179799283310}
@@ -47,6 +47,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e378ef539a1145f29e4780a756f2a12e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GunshipIntelligence
+  orbitRadius: 40
+  cruiseSpeed: 15
+  evadeSpeed: 40
+  angularAccel: 40
+  heightAbovePlayer: 8
+  heightWobble: 6
+  wobbleFrequency: 0.3
+  player: {fileID: 0}
 --- !u!1 &5488467283344095635
 GameObject:
   m_ObjectHideFlags: 0

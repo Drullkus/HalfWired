@@ -387,8 +387,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MissileController
   _firstPersonController: {fileID: 0}
-  steerRate: 100
-  speed: 40
+  steerRate: 120
+  speed: 20
+  lifetime: 6.5
+  guidanceDelay: 0.5
 --- !u!54 &8024852752136707583
 Rigidbody:
   m_ObjectHideFlags: 0

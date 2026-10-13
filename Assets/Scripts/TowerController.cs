@@ -8,9 +8,10 @@ public class TowerController : MonoBehaviour
     
     public void Awake()
     {
-        foreach (var keyValuePair in rooms)
+        foreach (var indexedRoom in rooms)
         {
-            keyValuePair.Value.GetComponent<RoomController>().InitializeRoom(this, keyValuePair.Key);
+            indexedRoom.Value.GetComponent<RoomController>().InitializeRoom(this, indexedRoom.Key);
         }
     }
+
 }

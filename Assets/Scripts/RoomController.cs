@@ -27,4 +27,18 @@ public class RoomController : MonoBehaviour
         wallNZ.SetActive(Random.value >= wallVanishChance);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!other.CompareTag("Player")) return;
+        
+        Debug.Log($"Tower Room {index} entered: {other.gameObject.name}", other.gameObject);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (!other.CompareTag("Player")) return;
+        
+        Debug.Log($"Tower Room {index} exited: {other.gameObject.name}", other.gameObject);
+    }
+
 }

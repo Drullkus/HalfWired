@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4154922496303312347}
+  - component: {fileID: 2644074797120536444}
   m_Layer: 0
   m_Name: Gunship
   m_TagString: Untagged
@@ -34,6 +35,18 @@ Transform:
   - {fileID: 4061103101868905522}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2644074797120536444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3168380702778093515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e378ef539a1145f29e4780a756f2a12e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GunshipIntelligence
 --- !u!1 &5488467283344095635
 GameObject:
   m_ObjectHideFlags: 0

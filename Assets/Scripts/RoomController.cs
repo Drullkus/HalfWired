@@ -21,16 +21,10 @@ public class RoomController : MonoBehaviour
         tower = towerIn;
         index = indexIn;
         
-        Random.InitState(index.GetHashCode());
-        Random.InitState(Random.value.GetHashCode());
-        
         wallPX.SetActive(Random.value >= wallVanishChance);
         wallNX.SetActive(Random.value >= wallVanishChance);
         wallPZ.SetActive(Random.value >= wallVanishChance);
         wallNZ.SetActive(Random.value >= wallVanishChance);
-
-        transform.position = new Vector3(transform.position.x, index * height, transform.position.z);
-        transform.rotation = Quaternion.Euler(0, Random.Range(0, 4) * 90, 0);
     }
 
     public long GetIndex()

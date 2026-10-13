@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class TowerController : MonoBehaviour
 {
@@ -10,10 +11,12 @@ public class TowerController : MonoBehaviour
     
     private readonly Dictionary<Int64, GameObject> _rooms = new();
     private readonly HashSet<RoomController> _playerOverlapping = new();
+    private int salt;
 
     public void Start()
     {
         InitializeMissingRooms(0);
+        salt = Random.Range(0, int.MaxValue);
     }
 
     public void PlayerEnteredRoom(RoomController room)
@@ -67,7 +70,13 @@ public class TowerController : MonoBehaviour
         {
             if (_rooms.ContainsKey(roomIndex)) continue;
 
-            var newRoom = Instantiate(roomPrefab, transform);
+            Random.InitState(roomIndex.GetHashCode() ^ salt);
+            Random.InitState(Random.value.GetHashCode());
+
+            var position = new Vector3(0, roomIndex * 12, 0);
+            var rotation = Quaternion.Euler(0, Random.Range(0, 4) * 90, 0);
+            
+            var newRoom = Instantiate(roomPrefab, position, rotation, transform);
             newRoom.GetComponent<RoomController>().InitializeRoom(this, roomIndex);
             _rooms.Add(roomIndex, newRoom);
         }

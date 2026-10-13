@@ -34,9 +34,9 @@ public class FirstPersonController : MonoBehaviour
             return;
         }
 
-        moveAction   = asset.FindAction("Player/Move", throwIfNotFound: true);
-        lookAction   = asset.FindAction("Player/Look", throwIfNotFound: true);
-        jumpAction   = asset.FindAction("Player/Jump",   throwIfNotFound: true);
+        moveAction = asset.FindAction("Player/Move", throwIfNotFound: true);
+        lookAction = asset.FindAction("Player/Look", throwIfNotFound: true);
+        jumpAction = asset.FindAction("Player/Jump", throwIfNotFound: true);
     }
 
     private static void CaptureCursor()

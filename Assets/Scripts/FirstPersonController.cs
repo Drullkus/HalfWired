@@ -161,4 +161,20 @@ public class FirstPersonController : MonoBehaviour
         return (laserLayerHits.value & (1 << collided.layer)) != 0;
     }
 
+    public void Kill()
+    {
+        // TODO you lose!
+        Debug.Log($"Game over, resetting {transform.name}");
+
+        FindAnyObjectByType<TowerController>().RebuildTower(0);
+        Teleport(new Vector3(0, 6, 0));
+    }
+
+    private void Teleport(Vector3 position)
+    {
+        controller.enabled = false;
+        transform.position = position;
+        controller.enabled = true;
+    }
+
 }

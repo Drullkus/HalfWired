@@ -46,7 +46,7 @@ public class TowerController : MonoBehaviour
         }
     }
 
-    private void RebuildTower(long playerRoom)
+    public void RebuildTower(long playerRoom)
     {
         // Debug.Log($"Rebuilding tower from room {playerRoom}");
         

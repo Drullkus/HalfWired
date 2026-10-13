@@ -9,6 +9,7 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private Transform cameraPivot;
     [SerializeField] private Camera camera;
     
+    [Header("Movement")]
     [SerializeField] private float mouseSensitivity = 0.1f;
     [SerializeField] private float maxPitch = 85f;
     [SerializeField] private bool lockCursor = true;
@@ -16,6 +17,7 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private float jumpHeight = 2.5f;
     [SerializeField] private float gravity = -20f;
     
+    [Header("Laser-Guided Missile")]
     [SerializeField] private float laserRange = 50f;
     [SerializeField] private LayerMask laserLayerHits;
 

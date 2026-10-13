@@ -795,6 +795,7 @@ GameObject:
   - component: {fileID: 2061833410177345879}
   - component: {fileID: 3994384163162487453}
   - component: {fileID: 5170074922832608184}
+  - component: {fileID: 5492241901363759270}
   m_Layer: 0
   m_Name: Room
   m_TagString: Untagged
@@ -854,6 +855,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 25, y: 12, z: 25}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5492241901363759270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8072439312301312402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd358cb447674f9e8866d8ac3e0f1190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoomController
+  wallVanishChance: 0.9
+  index: 0
+  wallPX: {fileID: 8446484179243537204}
+  wallNX: {fileID: 710552330957455306}
+  wallPZ: {fileID: 3544897543565418052}
+  wallNZ: {fileID: 3787035763017689529}
+  tower: {fileID: 0}
 --- !u!1 &8446484179243537204
 GameObject:
   m_ObjectHideFlags: 0

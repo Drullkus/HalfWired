@@ -16,7 +16,7 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private float jumpHeight = 2.5f;
     [SerializeField] private float gravity = -20f;
     
-    [SerializeField] private float laserRange = 60f;
+    [SerializeField] private float laserRange = 50f;
     [SerializeField] private LayerMask laserLayerHits;
 
     [SerializeField] private GameObject missile;

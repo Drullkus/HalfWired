@@ -29,6 +29,9 @@ public class MissileController : MonoBehaviour
 
     private void OnEnable()
     {
+        _rb.linearVelocity = Vector3.zero;
+        _rb.angularVelocity = Vector3.zero;
+
         _launchTime = Time.time;
         StartCoroutine(ScheduleExpire(lifetime));
     }

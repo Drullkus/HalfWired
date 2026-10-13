@@ -251,10 +251,12 @@ MonoBehaviour:
   moveSpeed: 10
   jumpHeight: 2.5
   gravity: -20
-  laserRange: 60
+  laserRange: 50
   laserLayerHits:
     serializedVersion: 2
     m_Bits: 1
+  missile: {fileID: 0}
+  missileOffset: 1
 --- !u!143 &4614830038613154770
 CharacterController:
   m_ObjectHideFlags: 0

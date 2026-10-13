@@ -1,10 +1,13 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class RoomController : MonoBehaviour
 {
     [SerializeField] private double wallVanishChance = 0.25;
     
     [SerializeField] private long index;
+    [SerializeField] private float height;
 
     [SerializeField] private GameObject wallPX;
     [SerializeField] private GameObject wallNX;
@@ -25,20 +28,26 @@ public class RoomController : MonoBehaviour
         wallNX.SetActive(Random.value >= wallVanishChance);
         wallPZ.SetActive(Random.value >= wallVanishChance);
         wallNZ.SetActive(Random.value >= wallVanishChance);
+
+        transform.position = new Vector3(transform.position.x, index * height, transform.position.z);
+        transform.rotation = Quaternion.Euler(0, Random.Range(0, 4) * 90, 0);
+    }
+
+    public long GetIndex()
+    {
+        return index;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player")) return;
-        
-        Debug.Log($"Tower Room {index} entered: {other.gameObject.name}", other.gameObject);
+        tower.PlayerEnteredRoom(this);
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (!other.CompareTag("Player")) return;
-        
-        Debug.Log($"Tower Room {index} exited: {other.gameObject.name}", other.gameObject);
+        tower.PlayerExitedRoom(this);
     }
 
 }

@@ -869,6 +869,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RoomController
   wallVanishChance: 0.9
   index: 0
+  height: 12
   wallPX: {fileID: 8446484179243537204}
   wallNX: {fileID: 710552330957455306}
   wallPZ: {fileID: 3544897543565418052}

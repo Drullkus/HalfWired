@@ -14,6 +14,8 @@ public class RoomController : MonoBehaviour
     [SerializeField] private GameObject wallPZ;
     [SerializeField] private GameObject wallNZ;
 
+    [SerializeField] private GameObject doodadsVolume;
+
     [SerializeField] private TowerController tower;
 
     public void InitializeRoom(TowerController towerIn, long indexIn)

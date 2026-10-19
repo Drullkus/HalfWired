@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7557518375363753673}
-  - component: {fileID: 1076185117810166672}
+  - component: {fileID: 5630451532142140250}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -34,7 +34,7 @@ Transform:
   - {fileID: 8104337931148030717}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1076185117810166672
+--- !u!114 &5630451532142140250
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,7 +43,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2440460536814269461}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20fabd611d2e4f119c94b7a1dbe4f630, type: 3}
+  m_Script: {fileID: 11500000, guid: d94ab555148e74fcd8f7eb1091029d27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerController
   roomPrefab: {fileID: 8072439312301312402, guid: c43dba224f4ab42359065337af52cb17, type: 3}

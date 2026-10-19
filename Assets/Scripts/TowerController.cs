@@ -10,11 +10,31 @@ public class TowerController : MonoBehaviour
     [SerializeField] private GameObject roomPrefab;
     [SerializeField] private Transform towerTop;
     [SerializeField] private Transform towerBottom;
+
+    [SerializeField] private bool regenerate; // Toybox trick
     
     private readonly Dictionary<Int64, GameObject> _rooms = new();
     private readonly HashSet<RoomController> _playerOverlapping = new();
     private int salt;
     private int roomHeight = 12;
+
+    public void OnValidate()
+    {
+        if (regenerate)
+        {
+            regenerate = false;
+            var player = GameObject.FindGameObjectWithTag("Player");
+            var playerMidY = player.transform.position.y + player.GetComponent<CharacterController>().height * 0.5f;
+            var roomY = WorldSpaceYToRoomIndex(playerMidY);
+            // Debug.Log($"Regenerating rooms centered on {roomY}");
+            RebuildTower(roomY, true);
+        }
+    }
+
+    private int WorldSpaceYToRoomIndex(float worldY)
+    {
+        return Mathf.RoundToInt(worldY / roomHeight);
+    }
 
     public void Start()
     {
@@ -46,19 +66,19 @@ public class TowerController : MonoBehaviour
         }
     }
 
-    public void RebuildTower(long playerRoom)
+    public void RebuildTower(long playerRoom, bool all = false)
     {
         // Debug.Log($"Rebuilding tower from room {playerRoom}");
         
-        DestroyFarRooms(playerRoom);
+        DestroyFarRooms(playerRoom, all);
         InitializeMissingRooms(playerRoom);
         towerBottom.position = new Vector3(0, (playerRoom - 3) * roomHeight, 0);
         towerTop.position = new Vector3(0, (playerRoom + 3) * roomHeight, 0);
     }
 
-    private void DestroyFarRooms(long playerRoom)
+    private void DestroyFarRooms(long playerRoom, bool all = false)
     {
-        var farRooms = _rooms.Keys
+        var farRooms = all ? _rooms.Keys.ToList() : _rooms.Keys
             .Where(key => Math.Abs(key - playerRoom) > 2)
             .ToList();
 
@@ -66,6 +86,7 @@ public class TowerController : MonoBehaviour
         {
             Destroy(_rooms[farRoomIndex]);
             _rooms.Remove(farRoomIndex);
+            // Debug.Log($"Removed {farRoomIndex}");
         }
     }
 

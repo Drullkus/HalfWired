@@ -942,6 +942,8 @@ MonoBehaviour:
     value: 100
   - key: {fileID: 3717274719692123058, guid: bc5daf4ce3c2246e1bd0814f386b7689, type: 3}
     value: 75
+  - key: {fileID: 1072635673940736611, guid: 59a2dd26bc28847fbaa0b588cdf33e73, type: 3}
+    value: 50
   objectCountLowerBound: 2
   objectCountUpperBound: 6
   doodadsVolume: {fileID: 6436861757553737352}

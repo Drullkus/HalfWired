@@ -943,6 +943,9 @@ MonoBehaviour:
   objectCountLowerBound: 2
   objectCountUpperBound: 4
   doodadsVolume: {fileID: 6436861757553737352}
+  doodadCheckLayer:
+    serializedVersion: 2
+    m_Bits: 128
   tower: {fileID: 0}
 --- !u!1 &8446484179243537204
 GameObject:

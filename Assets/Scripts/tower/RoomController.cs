@@ -19,8 +19,9 @@ public class RoomController : MonoBehaviour
     [SerializeField] private Dictionary<GameObject, int> doodadOptions = new();
 
     [SerializeField] private int objectCountLowerBound = 2;
-    [SerializeField] private int objectCountUpperBound = 4;
+    [SerializeField] private int objectCountUpperBound = 6;
     [SerializeField] private GameObject doodadsVolume;
+    [SerializeField] private LayerMask doodadCheckLayer;
 
     [SerializeField] private TowerController tower;
 
@@ -61,7 +62,11 @@ public class RoomController : MonoBehaviour
             float xPos = Mathf.Lerp(-placeRadiusX, placeRadiusX, Random.value);
             float zPos = Mathf.Lerp(-placeRadiusZ, placeRadiusZ, Random.value);
             float yPos = indexIn * roomHeight - placeRadiusY - 0.5f;
-            Instantiate(chosenPrefab, new Vector3(xPos, yPos, zPos), new Quaternion(0, 1, 0, Random.value), doodadsVolume.transform);
+            var placePos = new Vector3(xPos, yPos, zPos);
+
+            if (Physics.CheckBox(placePos, new Vector3(1.5f, 1.5f, 1.5f), Quaternion.identity, doodadCheckLayer.value)) continue;
+            
+            Instantiate(chosenPrefab, placePos, new Quaternion(0, 1, 0, Random.value), doodadsVolume.transform);
         }
     }
 

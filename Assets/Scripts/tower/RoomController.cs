@@ -42,7 +42,7 @@ public class RoomController : MonoBehaviour
     private void PlaceDoodads(long indexIn)
     {
         if (doodadOptions.Count <= 0) return;
-        int objectSpawns = Random.Range(objectCountLowerBound, objectCountUpperBound);
+        int objectSpawns = Random.Range(objectCountLowerBound, objectCountUpperBound + 1);
         if (objectSpawns <= 0) return;
         int totalWeight = doodadOptions.Values.Aggregate((a, b) => a + b);
         if (totalWeight <= 0) return;

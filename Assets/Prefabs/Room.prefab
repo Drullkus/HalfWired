@@ -940,8 +940,10 @@ MonoBehaviour:
   doodadOptions:
   - key: {fileID: 3240613877537015582, guid: 6d319e7385e274715bee51d1f883290e, type: 3}
     value: 100
+  - key: {fileID: 3717274719692123058, guid: bc5daf4ce3c2246e1bd0814f386b7689, type: 3}
+    value: 75
   objectCountLowerBound: 2
-  objectCountUpperBound: 4
+  objectCountUpperBound: 6
   doodadsVolume: {fileID: 6436861757553737352}
   doodadCheckLayer:
     serializedVersion: 2

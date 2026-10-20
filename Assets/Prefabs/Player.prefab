@@ -254,7 +254,7 @@ MonoBehaviour:
   laserRange: 50
   laserLayerHits:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 129
   missile: {fileID: 0}
   missileOffset: 1
 --- !u!143 &4614830038613154770

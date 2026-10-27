@@ -72,14 +72,16 @@ public class TowerController : MonoBehaviour
         
         DestroyFarRooms(playerRoom, all);
         InitializeMissingRooms(playerRoom);
-        towerBottom.position = new Vector3(0, (playerRoom - 3) * roomHeight, 0);
-        towerTop.position = new Vector3(0, (playerRoom + 3) * roomHeight, 0);
+        
+        var towerEndPadding = GameMaster.Instance.TowerPadding + 1;
+        towerBottom.position = new Vector3(0, (playerRoom - towerEndPadding) * roomHeight, 0);
+        towerTop.position = new Vector3(0, (playerRoom + towerEndPadding) * roomHeight, 0);
     }
 
     private void DestroyFarRooms(long playerRoom, bool all = false)
     {
         var farRooms = all ? _rooms.Keys.ToList() : _rooms.Keys
-            .Where(key => Math.Abs(key - playerRoom) > 2)
+            .Where(key => Math.Abs(key - playerRoom) > GameMaster.Instance.TowerPadding)
             .ToList();
 
         foreach (var farRoomIndex in farRooms)
@@ -92,7 +94,8 @@ public class TowerController : MonoBehaviour
 
     private void InitializeMissingRooms(long playerRoom)
     {
-        for (var roomIndex = playerRoom - 2; roomIndex <= playerRoom + 2; roomIndex++)
+        var towerPadding = GameMaster.Instance.TowerPadding;
+        for (var roomIndex = playerRoom - towerPadding; roomIndex <= playerRoom + GameMaster.Instance.TowerPadding; roomIndex++)
         {
             if (_rooms.ContainsKey(roomIndex)) continue;
 

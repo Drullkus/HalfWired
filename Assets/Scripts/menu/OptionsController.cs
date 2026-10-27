@@ -9,4 +9,10 @@ public class OptionsController : MonoBehaviour
         GameMaster.Instance.TowerPadding = Mathf.RoundToInt(value);
     }
 
+    public void UpdateRocketDifficulty(float value)
+    {
+        Debug.Log($"Rocket Difficulty set to {value}");
+        GameMaster.Instance.RocketDifficulty = value;
+    }
+
 }

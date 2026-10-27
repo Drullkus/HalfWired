@@ -10,6 +10,7 @@ public class GameMaster
     public static GameMaster Instance { get; } = new();
 
     public int TowerPadding = 2;
+    public float RocketDifficulty = 1.0f;
     
     public bool MenuOpen = true;
     

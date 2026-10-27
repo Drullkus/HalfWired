@@ -47,10 +47,10 @@ public class MissileController : MonoBehaviour
         Vector3 heading = transform.forward;
         
         if (Time.time - _launchTime > guidanceDelay)
-            heading = Vector3.RotateTowards(heading, LaserPoint - _rb.position, steerRate * Mathf.Deg2Rad * Time.fixedDeltaTime, 0f);
+            heading = Vector3.RotateTowards(heading, LaserPoint - _rb.position, GameMaster.Instance.RocketDifficulty * steerRate * Mathf.Deg2Rad * Time.fixedDeltaTime, 0f);
 
         _rb.MoveRotation(Quaternion.LookRotation(heading));
-        _rb.linearVelocity = heading * speed;
+        _rb.linearVelocity = heading * (GameMaster.Instance.RocketDifficulty * speed);
     }
 
     private void OnCollisionEnter(Collision collision)

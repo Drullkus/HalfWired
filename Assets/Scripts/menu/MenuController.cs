@@ -43,6 +43,7 @@ public class MenuController : MonoBehaviour
     {
         HideAll();
         mainMenu.SetActive(true);
+        hudController.Reset();
     }
 
     public void EnterOptions()

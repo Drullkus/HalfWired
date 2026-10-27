@@ -19,7 +19,6 @@ public class GameOverHighScoreController : MonoBehaviour
         highScoreObjects.SetActive(false);
 
         highScoreField.text = "";
-        hudController.Reset();
     }
     
 }

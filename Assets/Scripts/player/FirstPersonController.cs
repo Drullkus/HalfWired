@@ -9,7 +9,7 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private Transform cameraPivot;
     [SerializeField] private Camera camera;
     
-    [SerializeField] private GameObject gameOverScreen;
+    [SerializeField] private MenuController menuController;
     
     [Header("Movement")]
     [SerializeField] private float mouseSensitivity = 0.1f;
@@ -176,8 +176,7 @@ public class FirstPersonController : MonoBehaviour
         
         ReleaseCursor();
         GameMaster.Instance.MenuOpen = true;
-        gameOverScreen.SetActive(true);
-
+        menuController.EnterGameOver();
     }
 
     private void Teleport(Vector3 position)

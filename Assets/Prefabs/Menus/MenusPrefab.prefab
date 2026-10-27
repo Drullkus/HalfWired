@@ -90,7 +90,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &9135739468306445791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,11 +120,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82a58b854b240cebc7c307507a2cf04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuController
+  player: {fileID: 0}
   mainMenu: {fileID: 2975008265323204420}
   options: {fileID: 2846194927515095625}
   credits: {fileID: 30711461170494831}
   gameOver: {fileID: 4116594802750363785}
   leaderBoard: {fileID: 2883006673989339468}
+  leaderBoardText: {fileID: 3946868124222952133}
 --- !u!1001 &282037754269111327
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -566,6 +568,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1175742327221967169, guid: 9442b262aa8874d58810b40249c488ce, type: 3}
   m_PrefabInstance: {fileID: 4058706579275632653}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3946868124222952133 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1050881897189393096, guid: 9442b262aa8874d58810b40249c488ce, type: 3}
+  m_PrefabInstance: {fileID: 4058706579275632653}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &6985153272768193058
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -780,7 +793,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8834985041684757289, guid: 71affc95096b54193b214f83a6a67dac, type: 3}
       propertyPath: m_PresetInfoIsWorld
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9198222623714555747, guid: 71affc95096b54193b214f83a6a67dac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size

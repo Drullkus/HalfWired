@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class MenuController : MonoBehaviour
@@ -9,6 +10,8 @@ public class MenuController : MonoBehaviour
     [SerializeField] private GameObject credits;
     [SerializeField] private GameObject gameOver;
     [SerializeField] private GameObject leaderBoard;
+
+    [SerializeField] private TMP_Text leaderBoardText;
 
     private void HideAll()
     {
@@ -60,6 +63,7 @@ public class MenuController : MonoBehaviour
     public void EnterLeaderBoard()
     {
         HideAll();
+        leaderBoardText.text = GameMaster.Instance.GetScoresString();
         leaderBoard.SetActive(true);
     }
 

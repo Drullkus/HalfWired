@@ -257,11 +257,22 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!1 &669044819 stripped
+--- !u!1 &673720246 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 9172826787974912140, guid: ee3af0e7706ef4d6bb2924b3d373c6bc, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4891412419138020818, guid: ee3af0e7706ef4d6bb2924b3d373c6bc, type: 3}
   m_PrefabInstance: {fileID: 6160170674108314725}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &673720248 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 952378862388071066, guid: ee3af0e7706ef4d6bb2924b3d373c6bc, type: 3}
+  m_PrefabInstance: {fileID: 6160170674108314725}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673720246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f82a58b854b240cebc7c307507a2cf04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MenuController
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,7 +543,11 @@ PrefabInstance:
     - target: {fileID: 6560652598021922250, guid: 10595e636d9b5477487760df838ea10e, type: 3}
       propertyPath: gameOverScreen
       value: 
-      objectReference: {fileID: 669044819}
+      objectReference: {fileID: 673720246}
+    - target: {fileID: 6560652598021922250, guid: 10595e636d9b5477487760df838ea10e, type: 3}
+      propertyPath: menuController
+      value: 
+      objectReference: {fileID: 673720248}
     - target: {fileID: 7559932539786844989, guid: 10595e636d9b5477487760df838ea10e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

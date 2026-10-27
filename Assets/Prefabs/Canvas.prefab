@@ -116,6 +116,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenusPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 4270201701427519951, guid: e3c0680197a7644f7bfc904cadd6811a, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6330900172109533830, guid: e3c0680197a7644f7bfc904cadd6811a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

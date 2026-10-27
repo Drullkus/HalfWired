@@ -10,6 +10,9 @@ public class MenuController : MonoBehaviour
     [SerializeField] private GameObject credits;
     [SerializeField] private GameObject gameOver;
     [SerializeField] private GameObject leaderBoard;
+    
+    [SerializeField] private HudController hudController;
+    [SerializeField] private GameObject highScoreField;
 
     [SerializeField] private TMP_Text leaderBoardText;
 
@@ -57,6 +60,8 @@ public class MenuController : MonoBehaviour
     public void EnterGameOver()
     {
         HideAll();
+
+        highScoreField.SetActive(GameMaster.Instance.IsNewHighScore(hudController.hits));
         gameOver.SetActive(true);
     }
 

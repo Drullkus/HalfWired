@@ -126,6 +126,8 @@ MonoBehaviour:
   credits: {fileID: 30711461170494831}
   gameOver: {fileID: 4116594802750363785}
   leaderBoard: {fileID: 2883006673989339468}
+  hudController: {fileID: 0}
+  highScoreField: {fileID: 928288526108435698}
   leaderBoardText: {fileID: 3946868124222952133}
 --- !u!1001 &282037754269111327
 PrefabInstance:
@@ -967,6 +969,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01e434a8a226741c483f3260c891f3b3, type: 3}
+--- !u!1 &928288526108435698 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8100646578779896742, guid: 01e434a8a226741c483f3260c891f3b3, type: 3}
+  m_PrefabInstance: {fileID: 8974185713556463444}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1679448498842275396 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7765384266764357904, guid: 01e434a8a226741c483f3260c891f3b3, type: 3}

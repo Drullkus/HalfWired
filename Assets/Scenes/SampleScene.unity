@@ -524,6 +524,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5886581cf28f467095b0d3947ee8b97, type: 3}
+--- !u!114 &1930663918 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6577681404968331129, guid: ee3af0e7706ef4d6bb2924b3d373c6bc, type: 3}
+  m_PrefabInstance: {fileID: 6160170674108314725}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cccc65ef01404fd395dd2dcc067aecb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HudController
 --- !u!1001 &5256218027446998267
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -605,6 +616,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 222741289}
+    - target: {fileID: 952378862388071066, guid: ee3af0e7706ef4d6bb2924b3d373c6bc, type: 3}
+      propertyPath: hudController
+      value: 
+      objectReference: {fileID: 1930663918}
     - target: {fileID: 1746810433751400268, guid: ee3af0e7706ef4d6bb2924b3d373c6bc, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -613,6 +628,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5358515767554938158, guid: ee3af0e7706ef4d6bb2924b3d373c6bc, type: 3}
+      propertyPath: hudController
+      value: 
+      objectReference: {fileID: 1930663918}
     - target: {fileID: 6713915715558243487, guid: ee3af0e7706ef4d6bb2924b3d373c6bc, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 0

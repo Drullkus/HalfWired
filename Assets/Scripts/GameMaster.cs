@@ -48,7 +48,7 @@ public class GameMaster
 
     public bool IsNewHighScore(int score)
     {
-        return _playerScores.Any(x => x.score > score);
+        return _playerScores.Count < 10 || _playerScores.Any(x => score > x.score);
     }
 
 }

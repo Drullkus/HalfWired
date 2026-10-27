@@ -9,6 +9,8 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private Transform cameraPivot;
     [SerializeField] private Camera camera;
     
+    [SerializeField] private GameObject gameOverScreen;
+    
     [Header("Movement")]
     [SerializeField] private float mouseSensitivity = 0.1f;
     [SerializeField] private float maxPitch = 85f;
@@ -53,7 +55,7 @@ public class FirstPersonController : MonoBehaviour
         attackAction = asset.FindAction("Player/Attack", throwIfNotFound: true);
     }
 
-    private static void CaptureCursor()
+    public static void CaptureCursor()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -67,7 +69,7 @@ public class FirstPersonController : MonoBehaviour
 
     private void OnEnable()
     {
-        if (lockCursor)
+        if (lockCursor && !GameMaster.Instance.MenuOpen)
         {
             CaptureCursor();
         }
@@ -77,6 +79,8 @@ public class FirstPersonController : MonoBehaviour
 
     private void Update()
     {
+        if (GameMaster.Instance.MenuOpen) return;
+        
         HandleCursorToggle();
         HandleLook();
         HandleMove();
@@ -169,6 +173,11 @@ public class FirstPersonController : MonoBehaviour
         FindAnyObjectByType<TowerController>().RebuildTower(0);
         FindAnyObjectByType<HudController>().Reset();
         Teleport(new Vector3(0, 6, 0));
+        
+        ReleaseCursor();
+        GameMaster.Instance.MenuOpen = true;
+        gameOverScreen.SetActive(true);
+
     }
 
     private void Teleport(Vector3 position)

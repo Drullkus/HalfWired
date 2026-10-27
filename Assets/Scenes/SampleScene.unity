@@ -257,6 +257,11 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1 &669044819 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9172826787974912140, guid: ee3af0e7706ef4d6bb2924b3d373c6bc, type: 3}
+  m_PrefabInstance: {fileID: 6160170674108314725}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,6 +529,10 @@ PrefabInstance:
       propertyPath: missile
       value: 
       objectReference: {fileID: 1330115295}
+    - target: {fileID: 6560652598021922250, guid: 10595e636d9b5477487760df838ea10e, type: 3}
+      propertyPath: gameOverScreen
+      value: 
+      objectReference: {fileID: 669044819}
     - target: {fileID: 7559932539786844989, guid: 10595e636d9b5477487760df838ea10e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -577,6 +586,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 952378862388071066, guid: ee3af0e7706ef4d6bb2924b3d373c6bc, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 222741289}
     - target: {fileID: 1746810433751400268, guid: ee3af0e7706ef4d6bb2924b3d373c6bc, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

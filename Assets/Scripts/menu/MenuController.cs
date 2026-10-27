@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class MenuController : MonoBehaviour
 {
+    [SerializeField] private FirstPersonController player;
     
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject options;
@@ -11,6 +12,7 @@ public class MenuController : MonoBehaviour
 
     private void HideAll()
     {
+        GameMaster.Instance.MenuOpen = true;
         mainMenu.SetActive(false);
         options.SetActive(false);
         credits.SetActive(false);
@@ -22,6 +24,7 @@ public class MenuController : MonoBehaviour
     {
         HideAll();
         Debug.Log("Start Game");
+        GameMaster.Instance.MenuOpen = false;
     }
 
     public void ExitGame()

@@ -18,6 +18,18 @@ public class MenuController : MonoBehaviour
         leaderBoard.SetActive(false);
     }
 
+    public void EnterGame()
+    {
+        HideAll();
+        Debug.Log("Start Game");
+    }
+
+    public void ExitGame()
+    {
+        HideAll();
+        Debug.Log("Exit Game");
+    }
+
     public void EnterMainMenu()
     {
         HideAll();
